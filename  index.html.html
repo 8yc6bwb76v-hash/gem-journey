@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f1fb">
+<title>Gem Journey | 21日間カロリー貯金</title>
+<style>
+:root{--ink:#302641;--muted:#82768e;--lav:#a99ae9;--pink:#f0b8dc;--blue:#a8dff0;--mint:#9fe1d2;--gold:#f5d58c;--paper:#fffaff;--line:#eee5f4;--shadow:0 12px 32px rgba(87,59,117,.10)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 5% 0%,#f8dff0 0,transparent 35%),radial-gradient(ellipse at 95% 12%,#d9f4f7 0,transparent 32%),#f7f3fb;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;padding:0 14px 36px}
+main{max-width:620px;margin:0 auto;padding-top:env(safe-area-inset-top,12px)}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 3px 14px}.eyebrow{font-size:10px;letter-spacing:.19em;color:#8b79a0;font-weight:800}.brand{font-size:22px;letter-spacing:-.04em;font-weight:850;margin-top:3px}.brand span{background:linear-gradient(100deg,#9a7be0,#d783c0,#59b9c8);color:transparent;background-clip:text}.tiny-badge{font-size:11px;background:#fff9;border:1px solid #fff;padding:8px 10px;border-radius:999px;color:#7c6b8b}
+.card{background:rgba(255,255,255,.82);border:1px solid #fff;border-radius:24px;padding:18px;margin-bottom:13px;box-shadow:var(--shadow);backdrop-filter:blur(14px)}
+.hero{overflow:hidden;position:relative;background:linear-gradient(145deg,#fffafd 0%,#f1eaff 52%,#e4f8fa 100%);padding:20px 18px 18px}.hero:before,.hero:after{content:"✦";position:absolute;color:#fff;font-size:23px;text-shadow:0 0 12px #c4a7ff;opacity:.9}.hero:before{right:27px;top:18px}.hero:after{right:60px;top:45px;font-size:12px}
+.hero.sparkling:after{content:"✦  ✧  ✦";position:absolute;right:14px;top:82px;font-size:21px;letter-spacing:12px;color:#fff;text-shadow:0 0 5px #fff,0 0 12px #b59aff,0 0 24px #dca5ff;animation:twinkle 1.6s ease-in-out infinite;pointer-events:none}.hero.sparkling:before{content:"✧  ·  ✦";position:absolute;left:12px;top:120px;font-size:16px;letter-spacing:9px;color:#fff;text-shadow:0 0 6px #fff,0 0 18px #9de5ef;animation:twinkle 2s ease-in-out infinite reverse;pointer-events:none}@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.kicker{font-size:11px;letter-spacing:.13em;color:#87769c;font-weight:800}.hero h1{font-size:27px;line-height:1.25;margin:7px 0 4px;letter-spacing:-.04em}.hero h1 em{font-style:normal;color:#9377db}.sub{font-size:12px;color:#82748f;line-height:1.6}
+.gem-stage{height:154px;display:flex;align-items:center;justify-content:center;position:relative;margin:3px 0 0}
+.gem-stage:before{content:"";position:absolute;width:190px;height:90px;bottom:10px;border-radius:50%;background:radial-gradient(ellipse,#b8a3ef38,transparent 70%);filter:blur(7px)}
+.crystal{position:absolute;filter:drop-shadow(0 8px 8px #6c4f9c20);animation:float 4s ease-in-out infinite}
+.crystal:nth-child(2){animation-delay:-1.4s}.crystal:nth-child(3){animation-delay:-2.3s}.crystal:nth-child(4){animation-delay:-.7s}
+@keyframes float{0%,100%{transform:translateY(2px) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+.goal-row{display:flex;justify-content:space-between;align-items:flex-end;margin:0 0 9px}.big-number{font-size:30px;font-weight:850;letter-spacing:-.04em}.big-number small{font-size:13px;letter-spacing:0;color:#897c96;font-weight:700}.percent{font-size:18px;font-weight:850;color:#9278d7}
+.track{height:12px;border-radius:99px;background:#e9e1f1;overflow:hidden;box-shadow:inset 0 2px 3px #9a83ae1a}.fill{height:100%;width:0;background:linear-gradient(90deg,#9d86e7,#d9a0dc,#8bd8d8);border-radius:99px;transition:width .3s}
+.progress-foot{display:flex;justify-content:space-between;font-size:11px;color:#8a7d95;margin-top:8px}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.stat{background:#ffffffa8;border:1px solid #fff;border-radius:16px;padding:11px 12px}.stat label{font-size:10px;color:#897c96;display:block;margin-bottom:5px}.stat strong{font-size:17px;letter-spacing:-.02em}.stat strong small{font-size:11px;color:#8b7f98}
+h2{font-size:16px;margin:0 0 4px;letter-spacing:-.02em}.section-note{font-size:11px;color:var(--muted);margin:0 0 14px;line-height:1.55}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:750;color:#645571}.input-wrap{position:relative}.field input{width:100%;min-width:0;border:1px solid #e9e0ef;border-radius:13px;background:#fff;padding:12px 42px 12px 12px;font-size:16px;color:var(--ink);outline:none;appearance:none}.field input:focus{border-color:#b3a0ed;box-shadow:0 0 0 3px #b3a0ed24}.unit{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:#9b8ca5;pointer-events:none}.field input[type=date]{padding-right:10px;font-size:14px}
+.actions{display:flex;gap:9px;margin-top:14px}.btn{border:0;border-radius:13px;padding:12px 14px;font-weight:800;font-size:13px;cursor:pointer}.primary{background:linear-gradient(100deg,#9d88e7,#c58bd6);color:white;box-shadow:0 5px 12px #a28bdf35;flex:1}.secondary{background:#f5effa;color:#756584;border:1px solid #eee3f5}.saved{font-size:11px;color:#6f9c91;margin-top:9px;min-height:14px}
+.summary-list{display:grid;gap:8px}.day-row{display:grid;grid-template-columns:58px 1fr auto;gap:8px;align-items:center;background:#fff;border:1px solid #f0e8f5;padding:10px 11px;border-radius:14px}.day-label{font-size:11px;color:#897c96}.day-label b{display:block;color:#5f506e;font-size:12px;margin-bottom:2px}.day-detail{font-size:11px;color:#9688a0}.day-value{text-align:right;font-size:14px;font-weight:850}.day-value small{display:block;font-size:10px;font-weight:600;color:#9b8da5;margin-top:2px}.positive{color:#429b91}.negative{color:#c77d9f}.neutral{color:#9b8da5}
+.chart-wrap{height:160px;display:flex;align-items:flex-end;gap:7px;padding:12px 3px 0;border-bottom:1px solid #e9e0ef}.bar-col{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;min-width:0}.bar{width:min(28px,80%);min-height:2px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#c6a8ef,#88d5d6);box-shadow:0 3px 8px #bba4dc25}.bar.neg{background:linear-gradient(180deg,#f0b6cf,#df91b3)}.bar-day{font-size:10px;color:#8d8098}.bar-num{font-size:9px;color:#877992;white-space:nowrap}
+.week-box{background:linear-gradient(135deg,#f7efff,#eefbfc);border-radius:16px;padding:13px;margin-top:12px}.week-box .row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#7c6c8b;margin:5px 0}.week-box strong{color:#514263;font-size:14px}
+.table-scroll{overflow-x:auto;border-radius:14px;border:1px solid #eee5f4}table{border-collapse:collapse;width:100%;min-width:460px;background:#fff;font-size:11px}th,td{padding:9px 8px;text-align:right;border-bottom:1px solid #f0e9f5;white-space:nowrap}th{background:#f7f1fb;color:#7c6d8c;font-weight:800}td:first-child,th:first-child{text-align:left}tr:last-child td{border-bottom:0}.week-total td{background:#fbf8ff;font-weight:850}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.settings-grid .field input{padding-right:12px}.settings-grid .field.full{grid-column:1/-1}
+.footer-note{font-size:10px;color:#a094aa;line-height:1.6;text-align:center;padding:4px 12px 18px}
+.tabbar{display:flex;gap:7px;margin-bottom:13px}.tab{flex:1;text-align:center;border-radius:12px;padding:10px 5px;font-size:12px;font-weight:800;background:#fff8;border:1px solid #fff;color:#8a7c96;cursor:pointer}.tab.active{background:#fff;color:#8069c5;border-color:#dcd0f4;box-shadow:0 3px 12px #9e88c51c}
+.hidden{display:none!important}
+@media(max-width:380px){.card{padding:15px}.hero h1{font-size:24px}.big-number{font-size:26px}.field-grid{gap:9px}.brand{font-size:20px}}
+</style>
+</head>
+<body>
+<main>
+<header><div><div class="eyebrow">A LITTLE PROGRESS, EVERY DAY</div><div class="brand">Gem <span>Journey</span></div></div><div class="tiny-badge">21 DAYS ✦</div></header>
+<div class="tabbar"><button class="tab active" data-tab="home">✧ ダッシュボード</button><button class="tab" data-tab="history">▦ 記録・グラフ</button><button class="tab" data-tab="settings">⚙ 設定</button></div>
+<section id="home">
+<div class="card hero">
+<div class="hero-top"><div><div class="kicker">YOUR 21-DAY JOURNEY</div><h1>宝石を集めて、<br><em>目標まであと少し。</em></h1><div class="sub" id="dateRange">開始日を設定してね</div></div></div>
+<div class="gem-stage" aria-label="宝石がたまるイメージ">
+<svg class="crystal" style="left:8%;top:35px" width="55" height="64" viewBox="0 0 55 64"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8d6ff"/><stop offset=".45" stop-color="#a68ce9"/><stop offset="1" stop-color="#e7b6ec"/></linearGradient></defs><path d="M27 2 48 17 52 39 28 62 3 39 7 17Z" fill="url(#g1)" stroke="#fff" stroke-width="1.5"/><path d="M27 2 28 62 7 17M27 2 48 17 28 62M7 17 48 17M3 39 52 39" fill="none" stroke="#fff" stroke-opacity=".8"/></svg>
+<svg class="crystal" style="left:25%;top:10px" width="49" height="54" viewBox="0 0 49 54"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7faff"/><stop offset=".5" stop-color="#71cdd2"/><stop offset="1" stop-color="#c5fff1"/></linearGradient></defs><path d="M24 2 44 13 47 31 24 52 2 31 5 13Z" fill="url(#g2)" stroke="#fff" stroke-width="1.5"/><path d="M24 2 24 52M5 13 44 13M2 31 47 31M5 13 24 52 44 13" fill="none" stroke="#fff" stroke-opacity=".8"/></svg>
+<svg class="crystal" style="right:23%;top:9px" width="61" height="67" viewBox="0 0 61 67"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe9ae"/><stop offset=".45" stop-color="#e9b85d"/><stop offset="1" stop-color="#fff2cb"/></linearGradient></defs><path d="M30 2 53 18 58 41 30 65 3 41 8 18Z" fill="url(#g3)" stroke="#fff" stroke-width="1.5"/><path d="M30 2 30 65M8 18 53 18M3 41 58 41M8 18 30 65 53 18" fill="none" stroke="#fff" stroke-opacity=".85"/></svg>
+<svg class="crystal" style="right:5%;top:43px" width="47" height="54" viewBox="0 0 47 54"><defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd7ed"/><stop offset=".5" stop-color="#df7ebd"/><stop offset="1" stop-color="#f5d7ff"/></linearGradient></defs><path d="M23 2 43 14 45 32 23 52 2 32 4 14Z" fill="url(#g4)" stroke="#fff" stroke-width="1.5"/><path d="M23 2 23 52M4 14 43 14M2 32 45 32M4 14 23 52 43 14" fill="none" stroke="#fff" stroke-opacity=".8"/></svg>
+<svg style="position:absolute;bottom:0;left:0;width:100%;height:80px" viewBox="0 0 320 80" preserveAspectRatio="none"><path d="M35 8 L53 4 L67 11 L62 65 Q160 85 258 65 L253 11 L267 4 L285 8" fill="#d9d3f4" fill-opacity=".25" stroke="#b8a7d9" stroke-opacity=".8" stroke-width="1.5"/><path d="M62 65 Q160 85 258 65" fill="none" stroke="#fff" stroke-width="2"/></svg>
+</div>
+<div class="goal-row"><div><div class="sub">目標まであと</div><div class="big-number"><span id="remaining">7,200</span> <small>kcal</small></div></div><div style="text-align:right"><div class="sub">達成率</div><div class="percent" id="percent">0.0%</div></div></div>
+<div class="track"><div class="fill" id="progressFill"></div></div><div class="progress-foot"><span id="earnedLabel">累積 +0 kcal</span><span id="targetLabel">目標 7,200 kcal</span></div>
+<div class="stat-grid"><div class="stat"><label>✧ 21日間の残り</label><strong id="daysLeft">— 日</strong></div><div class="stat"><label>✧ 今日の収支</label><strong id="todayBalance">— <small>kcal</small></strong></div></div>
+</div>
+<div class="card">
+<h2>今日の記録 ✎</h2><p class="section-note">数字を入れて保存するだけ。日付を変えれば過去の日も編集できるよ。</p>
+<div class="field-grid">
+<div class="field full"><label for="entryDate">日付</label><input type="date" id="entryDate"></div>
+<div class="field"><label for="base">固定消費カロリー</label><div class="input-wrap"><input id="base" type="number" inputmode="decimal" min="0" placeholder="1683"><span class="unit">kcal</span></div></div>
+<div class="field"><label for="walk">徒歩通勤など</label><div class="input-wrap"><input id="walk" type="number" inputmode="decimal" min="0" placeholder="150"><span class="unit">kcal</span></div></div>
+<div class="field"><label for="exercise">運動・ジム</label><div class="input-wrap"><input id="exercise" type="number" inputmode="decimal" min="0" placeholder="0"><span class="unit">kcal</span></div></div>
+<div class="field"><label for="intake">摂取カロリー</label><div class="input-wrap"><input id="intake" type="number" inputmode="decimal" min="0" placeholder="1400"><span class="unit">kcal</span></div></div>
+</div>
+<div class="actions"><button class="btn primary" id="saveBtn">この日の記録を保存</button><button class="btn secondary" id="clearBtn">クリア</button></div><div class="saved" id="saveStatus" aria-live="polite"></div>
+<div class="week-box"><div class="row"><span>今日の獲得カロリー</span><strong id="dailyEarned">— kcal</strong></div><div class="row"><span>今週の累積（月〜日）</span><strong id="weeklyEarned">— kcal</strong></div><div class="row"><span>21日間の累積</span><strong id="totalEarned">+0 kcal</strong></div></div>
+</div>
+<div class="card"><h2>この21日間の進捗</h2><p class="section-note">開始日から21日間の収支を積み上げるよ。</p><div id="recentDays" class="summary-list"></div></div>
+</section>
+<section id="history" class="hidden">
+<div class="card"><h2>収支グラフ ✧</h2><p class="section-note">日ごとの獲得カロリー。プラスは目標に近づき、マイナスは累積から差し引かれるよ。</p><div id="chart" class="chart-wrap"></div><div class="week-box"><div class="row"><span>今週の累積</span><strong id="historyWeek">— kcal</strong></div><div class="row"><span>21日間の累積</span><strong id="historyTotal">+0 kcal</strong></div><div class="row"><span>達成率</span><strong id="historyPercent">0.0%</strong></div></div></div>
+<div class="card"><h2>週ごとの数字一覧</h2><p class="section-note">各週の月〜日の日別収支と、1週間の合計を数字で確認できるよ。マイナスの日もそのまま反映するよ。</p><div class="table-scroll"><table><thead><tr><th>日付</th><th>曜日</th><th>消費</th><th>摂取</th><th>獲得収支</th><th>週内累積</th></tr></thead><tbody id="numericTable"></tbody></table></div><div class="week-box"><div class="row"><span>表示期間の合計（記録済み）</span><strong id="tableGrandTotal">— kcal</strong></div></div></div>
+<div class="card"><h2>記録一覧</h2><p class="section-note">日付をタップすると、その日の入力内容を編集できるよ。</p><div id="allDays" class="summary-list"></div></div>
+</section>
+<section id="settings" class="hidden">
+<div class="card"><h2>目標の設定 ⚙</h2><p class="section-note">3週間の開始日と目標カロリーを設定。目標値は初期値7,200 kcalだよ。</p>
+<div class="settings-grid">
+<div class="field full"><label for="startDate">21日間の開始日</label><input type="date" id="startDate"></div>
+<div class="field"><label for="goal">目標カロリー</label><div class="input-wrap"><input id="goal" type="number" inputmode="decimal" min="1" value="7200"><span class="unit">kcal</span></div></div>
+<div class="field"><label for="baseDefault">固定消費の初期値</label><div class="input-wrap"><input id="baseDefault" type="number" inputmode="decimal" min="0" value="1683"><span class="unit">kcal</span></div></div>
+</div>
+<div class="actions"><button class="btn primary" id="settingsSave">設定を保存</button></div><p class="section-note" style="margin:12px 0 0">記録はこのブラウザ内に保存されるよ。ブラウザのデータを消すと記録が消える場合があるので、定期的にバックアップしてね。</p>
+<div class="actions"><button class="btn secondary" id="exportBtn">記録をバックアップ（JSON）</button><button class="btn secondary" id="csvBtn">CSVを書き出す</button></div>
+<label class="btn secondary" style="display:block;text-align:center;margin-top:9px">バックアップを読み込む<input id="importFile" type="file" accept=".json,application/json" style="display:none"></label>
+</div>
+</section>
+<div class="footer-note">小さな積み重ねを、きらきら見える形に。<br>このアプリのカロリー収支は推定値で、実際の体脂肪変化を保証するものではありません。</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const todayISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const shift=(iso,n)=>{const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const fmt=n=>Math.round(n).toLocaleString('ja-JP');
+const signed=n=>(n>0?'+':'')+fmt(n);
+const dateLabel=iso=>{if(!iso)return '—';const d=new Date(iso+'T12:00:00');return `${d.getMonth()+1}/${d.getDate()}（${'日月火水木金土'[d.getDay()]}）`};
+const defaults={entries:{},settings:{startDate:todayISO(),goal:7200,baseDefault:1683}};
+let state;
+try{state=JSON.parse(localStorage.getItem('gemJourneyV1'))||structuredClone(defaults)}catch(e){state=JSON.parse(JSON.stringify(defaults))}
+state.entries ||= {};state.settings ||= {};state.settings.startDate ||= todayISO();state.settings.goal=Number(state.settings.goal)||7200;state.settings.baseDefault=Number(state.settings.baseDefault)||1683;
+function persist(){localStorage.setItem('gemJourneyV1',JSON.stringify(state))}
+function entry(iso){return state.entries[iso]||null}
+function balance(e){if(!e||e.intake===''||e.intake==null)return null;return Number(e.base||0)+Number(e.walk||0)+Number(e.exercise||0)-Number(e.intake||0)}
+function totalBetween(start,end){let sum=0;for(let d=start;d<=end;d=shift(d,1)){const b=balance(entry(d));if(b!==null)sum+=b}return sum}
+function weekStart(iso){const day=new Date(iso+'T12:00:00').getDay();return shift(iso,-((day+6)%7))}
+function render(){
+ const start=state.settings.startDate, end=shift(start,20), today=todayISO(), goal=Number(state.settings.goal)||7200;
+ const daysLeft=Math.max(0,Math.ceil((new Date(end+'T12:00:00')-new Date(today+'T12:00:00'))/86400000));
+ const total=totalBetween(start,end), progress=Math.max(0,total), pct=Math.max(0,total/goal*100), remaining=Math.max(0,goal-total);
+ $('dateRange').textContent=`${dateLabel(start)} 〜 ${dateLabel(end)} · ${today<start?'開始前':today>end?'期間終了':`あと${daysLeft}日`}`;
+ $('remaining').textContent=fmt(remaining);$('percent').textContent=pct.toFixed(1)+'%';$('progressFill').style.width=Math.min(100,pct)+'%';$('home').querySelector('.hero').classList.toggle('sparkling',pct>=50);
+ $('earnedLabel').textContent=`累積 ${signed(total)} kcal`;$('targetLabel').textContent=`目標 ${fmt(goal)} kcal`;
+ $('daysLeft').textContent=(today<start?Math.ceil((new Date(start+'T12:00:00')-new Date(today+'T12:00:00'))/86400000):daysLeft)+' 日';
+ const todayBal=balance(entry(today));setValueClass($('todayBalance'),todayBal===null?'—':signed(todayBal),todayBal);
+ const current=$('entryDate').value||today;const curBal=balance(entry(current));setValueClass($('dailyEarned'),curBal===null?'未入力':signed(curBal)+' kcal',curBal);
+ $('weeklyEarned').textContent=signed(totalBetween(weekStart(current),current))+' kcal';
+ $('totalEarned').textContent=signed(total)+' kcal';$('historyWeek').textContent=signed(totalBetween(weekStart(current),current))+' kcal';$('historyTotal').textContent=signed(total)+' kcal';$('historyPercent').textContent=pct.toFixed(1)+'%';
+ renderRecent(start,end);renderChart(start,end);renderAll();renderNumericTable(start,end);
+}
+function setValueClass(el,text,val){el.textContent=text;el.classList.remove('positive','negative','neutral');el.classList.add(val===null?'neutral':val>=0?'positive':'negative')}
+function renderRecent(start,end){const box=$('recentDays');box.innerHTML='';for(let i=0;i<21;i++){const d=shift(start,i),e=entry(d),b=balance(e);if(!e&&d>todayISO())continue;const div=document.createElement('div');div.className='day-row';div.innerHTML=`<div class="day-label"><b>${dateLabel(d)}</b>DAY ${i+1}</div><div class="day-detail">${e?`摂取 ${e.intake===''?'—':fmt(e.intake)} kcal`:'記録なし'}</div><div class="day-value ${b===null?'neutral':b>=0?'positive':'negative'}">${b===null?'—':signed(b)+' kcal'}<small>${d===todayISO()?'TODAY':''}</small></div>`;box.appendChild(div)}if(!box.children.length)box.innerHTML='<div class="section-note">開始日以降の記録がここに表示されるよ。</div>'}
+function renderChart(start,end){const box=$('chart');box.innerHTML='';const today=todayISO();for(let i=0;i<21;i++){const d=shift(start,i);if(d>today)continue;const b=balance(entry(d));const col=document.createElement('div');col.className='bar-col';const val=document.createElement('div');val.className='bar-num';val.textContent=b===null?'':(Math.abs(b)>=1000?(b/1000).toFixed(1)+'k':fmt(b));const bar=document.createElement('div');bar.className='bar'+(b!==null&&b<0?' neg':'');const max=1500;bar.style.height=b===null?'2px':Math.max(3,Math.min(100,Math.abs(b)/max*100))+'%';bar.style.opacity=b===null?'.22':'1';const day=document.createElement('div');day.className='bar-day';day.textContent=(i+1);col.append(val,bar,day);box.append(col)}}
+
+function renderNumericTable(start,end){
+ const body=$('numericTable');body.innerHTML='';let grand=0;
+ // Show all 21 days grouped chronologically, with cumulative balance restarting every Monday.
+ for(let d=start;d<=end;d=shift(d,1)){
+   const e=entry(d),b=balance(e);
+   const wk=weekStart(d),cum=totalBetween(wk,d);
+   if(b!==null)grand+=b;
+   const tr=document.createElement('tr');
+   const dt=new Date(d+'T12:00:00'),dow='日月火水木金土'[dt.getDay()];
+   const consumption=e?Number(e.base||0)+Number(e.walk||0)+Number(e.exercise||0):null;
+   tr.innerHTML=`<td>${dateLabel(d)}</td><td>${dow}</td><td>${consumption===null?'—':fmt(consumption)}</td><td>${!e||e.intake===''?'—':fmt(e.intake)}</td><td class="${b===null?'neutral':b>=0?'positive':'negative'}">${b===null?'—':signed(b)}</td><td class="${cum>=0?'positive':'negative'}">${signed(cum)}</td>`;
+   body.append(tr);
+   // Insert a weekly subtotal row at Sunday or at the end of the selected 21-day window.
+   if(dt.getDay()===0||d===end){
+     const wkEnd=d, wkTotal=totalBetween(wk,wkEnd);
+     const subtotal=document.createElement('tr');subtotal.className='week-total';
+     subtotal.innerHTML=`<td colspan="4">週合計（${dateLabel(wk)}〜${dateLabel(wkEnd)}）</td><td class="${wkTotal>=0?'positive':'negative'}">${signed(wkTotal)}</td><td>—</td>`;
+     body.append(subtotal);
+   }
+ }
+ $('tableGrandTotal').textContent=signed(grand)+' kcal';
+}
+
+function renderAll(){const box=$('allDays');box.innerHTML='';const keys=Object.keys(state.entries).sort().reverse();if(!keys.length){box.innerHTML='<div class="section-note">まだ記録がないよ。今日の記録から始めよう。</div>';return}keys.forEach(d=>{const e=entry(d),b=balance(e),div=document.createElement('div');div.className='day-row';div.innerHTML=`<div class="day-label"><b>${dateLabel(d)}</b></div><div class="day-detail">固定 ${fmt(e.base||0)} · 徒歩 ${fmt(e.walk||0)} · 運動 ${fmt(e.exercise||0)}<br>摂取 ${e.intake===''?'—':fmt(e.intake)} kcal</div><div class="day-value ${b===null?'neutral':b>=0?'positive':'negative'}">${b===null?'—':signed(b)+' kcal'}<small>編集する ›</small></div>`;div.addEventListener('click',()=>loadEntry(d));box.append(div)})}
+function loadEntry(iso){$('entryDate').value=iso;const e=entry(iso);$('base').value=e?.base??state.settings.baseDefault;$('walk').value=e?.walk??'';$('exercise').value=e?.exercise??0;$('intake').value=e?.intake??'';$('saveStatus').textContent=e?'保存済みの記録を読み込みました。':'新しい日付です。';render();switchTab('home');window.scrollTo({top:0,behavior:'smooth'})}
+function switchTab(tab){document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));['home','history','settings'].forEach(id=>$(id).classList.toggle('hidden',id!==tab))}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+$('entryDate').value=todayISO();$('startDate').value=state.settings.startDate;$('goal').value=state.settings.goal;$('baseDefault').value=state.settings.baseDefault;loadEntry(todayISO());
+$('entryDate').addEventListener('change',()=>loadEntry($('entryDate').value));
+$('saveBtn').addEventListener('click',()=>{const d=$('entryDate').value;if(!d){$('saveStatus').textContent='日付を選んでね。';return}const intake=$('intake').value;if(intake===''){$('saveStatus').textContent='摂取カロリーを入力してね。';return}
+const num=id=>$(id).value===''?0:Number($(id).value);
+state.entries[d]={base:num('base'),walk:num('walk'),exercise:num('exercise'),intake:Number(intake)};persist();$('saveStatus').textContent=`${dateLabel(d)} の記録を保存したよ ✧`;render()});
+$('clearBtn').addEventListener('click',()=>{$('base').value=state.settings.baseDefault;$('walk').value='';$('exercise').value=0;$('intake').value='';$('saveStatus').textContent='入力欄をクリアしました。'});
+$('settingsSave').addEventListener('click',()=>{if(!$('startDate').value){alert('開始日を選んでね');return}state.settings.startDate=$('startDate').value;state.settings.goal=Math.max(1,Number($('goal').value)||7200);state.settings.baseDefault=Math.max(0,Number($('baseDefault').value)||0);persist();$('saveStatus').textContent='設定を保存しました。';render();});
+$('exportBtn').addEventListener('click',()=>download('gem-journey-backup.json',JSON.stringify(state,null,2),'application/json'));
+$('csvBtn').addEventListener('click',()=>{const rows=[['日付','固定消費kcal','徒歩kcal','運動kcal','摂取kcal','獲得カロリーkcal','週次累積kcal','21日累積kcal']];Object.keys(state.entries).sort().forEach(d=>{const e=entry(d),b=balance(e),w=totalBetween(weekStart(d),d),t=totalBetween(state.settings.startDate,d<shift(state.settings.startDate,20)?d:shift(state.settings.startDate,20));rows.push([d,e.base,e.walk,e.exercise,e.intake,b,w,t])});download('gem-journey-records.csv','\ufeff'+rows.map(r=>r.join(',')).join('\r\n'),'text/csv;charset=utf-8')});
+function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
+$('importFile').addEventListener('change',async ev=>{const file=ev.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!data.entries||!data.settings)throw new Error();state=data;persist();$('startDate').value=state.settings.startDate;$('goal').value=state.settings.goal;$('baseDefault').value=state.settings.baseDefault;loadEntry($('entryDate').value||todayISO());alert('バックアップを読み込みました。')}catch(e){alert('読み込めませんでした。Gem JourneyのJSONバックアップを選んでね。')}ev.target.value=''});
+</script>
+</body>
+</html>
